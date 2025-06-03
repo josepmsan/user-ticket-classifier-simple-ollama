@@ -4,7 +4,7 @@
   "description": "User ticket classifier using ollama",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/josepmsan/user-ticket-classifier-simple-ollama/issues"
   },
-  "homepage": "https://github.com/josepmsan/user-ticket-classifier-simple-ollama#readme"
+  "homepage": "https://github.com/josepmsan/user-ticket-classifier-simple-ollama#readme",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
 }
