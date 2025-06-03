@@ -4,7 +4,7 @@
   "description": "User ticket classifier using ollama",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,6 @@
   "dependencies": {
     "jest": "^29.7.0",
     "ollama": "^0.5.16"
-  }
+  },
+  "type": "module"
 }
