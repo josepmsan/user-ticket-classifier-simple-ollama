@@ -1,7 +1,7 @@
-import { Classifier } from "./classifier";
+const Classifier = require("./classifier");
 
 function main() {
-    Classifier.say_hello();
+    console.log(new Classifier().say_hello());
 }
 
 main();
