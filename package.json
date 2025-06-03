@@ -1,0 +1,19 @@
+{
+  "name": "user-ticket-classifier-simple-ollama",
+  "version": "1.0.0",
+  "description": "User ticket classifier using ollama",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josepmsan/user-ticket-classifier-simple-ollama.git"
+  },
+  "author": "Josep Maria Tomas Sanahuja",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/josepmsan/user-ticket-classifier-simple-ollama/issues"
+  },
+  "homepage": "https://github.com/josepmsan/user-ticket-classifier-simple-ollama#readme"
+}
