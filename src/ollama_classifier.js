@@ -1,4 +1,4 @@
-class Classifier {
+class OllamaClassifier {
     constructor(ollama) {
         this.ollama = ollama;
     }
@@ -49,5 +49,5 @@ function generate_prompt(ticket_text){
     `
 }
 
-export default Classifier;
-// module.exports = {Classifier};
+export default OllamaClassifier;
+// module.exports = {OllamaClassifier};

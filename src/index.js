@@ -1,4 +1,4 @@
-// const {Classifier} = require("./classifier");
+// const {OllamaClassifier} = require("./classifier");
 import OllamaClassifierController from './ollama_classifier_controller.js';
 
 async function main() {
