@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 app.post('/v1/classify_with_ollama_using_llama_3', (req, res) => {
     const {tickets = []} = req.body;
     const response = new OllamaClassifierController().classify_tickets(tickets);
-    res.send('Miau!');
+    res.status(200).json(response);
 });
 
 // Start the server
