@@ -3,15 +3,25 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send('Miau!');
+app.use((err, req, res, next) => {
+  console.error('Unexpected error:', err.stack);
+  res.status(500).json({ error: `Internal server error: ${err.message}` });
 });
 
-app.post('/v1/classify_with_ollama_using_llama_3', (req, res) => {
-    const {tickets = []} = req.body;
-    const response = new OllamaClassifierController().classify_tickets(tickets);
-    res.status(200).json(response);
-});
+try {
+    app.get('/', (req, res) => {
+        res.send('Miau!');
+    });
+
+    app.post('/v1/classify_with_ollama_using_llama_3', (req, res) => {
+        const {tickets = []} = req.body;
+        const response = new OllamaClassifierController().classify_tickets(tickets);
+        res.status(200).json(response);
+    });
+}
+catch(err) {
+    next(err);
+}
 
 // Start the server
 app.listen(port, () => {
