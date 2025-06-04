@@ -6,8 +6,8 @@ In a terminal type the commands that the following steps indicate.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-user/project-name.git
-cd project-name
+https://github.com/josepmsan/user-ticket-classifier-simple-ollama.git
+cd user-ticket-classifier-simple-ollama
 ```
 
 2. Install dependencies 
