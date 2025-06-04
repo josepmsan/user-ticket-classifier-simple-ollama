@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/josepmsan/user-ticket-classifier-simple-ollama#readme",
   "dependencies": {
+    "express": "^5.1.0",
     "jest": "^29.7.0",
     "ollama": "^0.5.16"
   },
