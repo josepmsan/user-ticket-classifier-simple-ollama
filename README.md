@@ -6,7 +6,7 @@ In a terminal type the commands that the following steps indicate.
 
 1. Clone the repository:
 ```bash
-https://github.com/josepmsan/user-ticket-classifier-simple-ollama.git
+git clone https://github.com/josepmsan/user-ticket-classifier-simple-ollama.git
 cd user-ticket-classifier-simple-ollama
 ```
 
