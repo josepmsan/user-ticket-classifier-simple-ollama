@@ -24,10 +24,6 @@ In a separated tab, same path type:
 Run the unit tests used at the beggining of the implementation, they will fail. It is ran by the testing framework Jest
 `npm test`
 
-## Project structure
-<pre lang="markdown"> ## 📁 Project Structure ```text ├── node_modules/ # Installed dependencies (auto-generated) ├── src/ # Source code │ ├── api.js # Sets up the API endpoints │ ├── index.js # Entry point of the application │ ├── index.test.js # Basic tests │ ├── ollama_classifier.js # Logic for interacting with the Ollama model │ └── ollama_classifier_controller.js # Manages classification flows ├── .gitignore # Git ignored files ├── LICENSE # Project license ├── package.json # Project metadata and dependencies ├── package-lock.json # Locked dependency versions └── README.md # Project documentation ``` </pre>
-
-
 ## Things to consider
 The project uses Ollama running llama3, so in the machine you are executing the code you should have ollama installed. Having GPU compatible with Ollama reduces the time needed to generate the classification, but works otherwise as well.
 
