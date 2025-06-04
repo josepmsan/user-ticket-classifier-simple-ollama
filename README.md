@@ -76,6 +76,12 @@ Follow the steps below to install **Ollama** on your system:
    ```
 
 ---
+## Steps to Install LLaMA 3 in Ollama
+Open your terminal (macOS/Linux) or PowerShell (Windows), and run:
+```bash
+ollama pull llama3
+ ```
+---
 
 For more details, visit the [official Ollama docs](https://ollama.readthedocs.io/en/quickstart/).
 
