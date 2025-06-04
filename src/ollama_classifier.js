@@ -1,18 +1,44 @@
+/**
+ * Classifier using ollama object instead of calling
+ * Ollama via local HTTP request
+ *
+ * @class OllamaClassifier
+ */
 class OllamaClassifier {
     constructor(ollama) {
         this.ollama = ollama;
     }
 
+    /**
+     * Dummy initial function for unit testing
+     *
+     * @return {*} 
+     * @memberof OllamaClassifier
+     */
     say_hello() {
         return "say hello";
     }
 
+    /**
+     * Classify ticket
+     *
+     * @param {text} text
+     * @return {JSON} 
+     * @memberof OllamaClassifier
+     */
     async classify(text) {
         const response = await send_msg_to_ollama(text, this.ollama);
         return response;
     }
 };
 
+/**
+ * Send message to Ollama
+ *
+ * @param {string} ticket_text
+ * @param {*} ollama - Ollama instance
+ * @return {JSON} 
+ */
 async function send_msg_to_ollama(ticket_text, ollama) {
     try {
         const prompt = generate_prompt(ticket_text);
@@ -36,6 +62,12 @@ async function send_msg_to_ollama(ticket_text, ollama) {
     }
 }
 
+/**
+ * Generate prompt for LLM
+ *
+ * @param {String} ticket_text
+ * @return {String}
+ */
 function generate_prompt(ticket_text){
     return `Classify the following support ticket into:
         - Intent (e.g., refund, question, billing, shipping, order, claim)

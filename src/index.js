@@ -1,5 +1,10 @@
 import OllamaClassifierController from './ollama_classifier_controller.js';
 
+/**
+ * Main function of the app using an HTTP request to
+ * the local express server to classify tickets
+ *
+ */
 async function main() {
     // const response = await new OllamaClassifierController().classify_ticket("I can't see where to generate all my prvious invoices, my accountant is urgently asking me for them!");
     fetch('http://localhost:3000/v1/classify_with_ollama_using_llama_3', {
