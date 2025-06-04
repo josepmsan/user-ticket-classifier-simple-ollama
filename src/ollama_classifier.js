@@ -9,23 +9,31 @@ class OllamaClassifier {
 
     async classify(text) {
         const response = await send_msg_to_ollama(text, this.ollama);
-        const json_obj = JSON.stringify(response);
         return response;
     }
 };
 
 async function send_msg_to_ollama(ticket_text, ollama) {
-    const prompt = generate_prompt(ticket_text);
-    const response = await ollama.chat({
-        model: 'llama3',
-        messages: [
-        { role: 'user', content: prompt }
-        ],
-    });
+    try {
+        const prompt = generate_prompt(ticket_text);
+        const response = await ollama.chat({
+            model: 'llama3',
+            messages: [
+            { role: 'user', content: prompt }
+            ],
+        });
 
-    const content = response.message.content
-    console.log(content);
-    return content;
+        if (!response || !response.message || !response.message.content) {
+            throw new Error("Unexpected response structure from ollama.chat");
+        }
+
+        const content = response.message.content
+        return content;
+    }
+    catch(err) {
+        console.error("Failed to send message to Ollama:", err);
+        throw err;
+    }
 }
 
 function generate_prompt(ticket_text){
@@ -50,4 +58,3 @@ function generate_prompt(ticket_text){
 }
 
 export default OllamaClassifier;
-// module.exports = {OllamaClassifier};
